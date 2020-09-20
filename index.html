@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Measure Truck Material</title>
 	<link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="white"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Hello World">
+  <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
 </head>
-<body style="background-color:#4A148C;">
+<body class="fullscreen" style="background-color:#4A148C;">
+	<div class="container">
 <center><h4 style="color: white"> Want to Calculate Measurement of Sand or Stone Material Available in the Truck?</h4></center>
 
 <center><h4 style="color: white">Length : </h4><input type="text" name="qty"/>
@@ -15,6 +23,7 @@
 <br><br>
 <button onclick="GFG_Fun('Parameter'); "> Calculate </button></center>
  <p id="GFG_DOWN" style="color: white;text-align: center;"></p>
+		</div>
 <script> 
         var up =  
             document.getElementById('GFG_UP'); 
