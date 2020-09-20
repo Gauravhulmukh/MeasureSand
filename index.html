@@ -34,7 +34,7 @@
 	a=Number(document.getElementById("length").value);
 	b=Number(document.getElementById("width").value);
 	c=Number(document.getElementById("height").value);
-	d= (a*12) * (b*12) * (c*12);
+	d= ((a*12) * (b*12) * (c*12)) / 1728;
 	answer.innerHTML = "Measurement in Brass : " + d;
 // 	document.getElementById("answer").value= d;
 	}
