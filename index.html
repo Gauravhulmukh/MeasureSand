@@ -4,27 +4,42 @@
 	<meta charset="utf-8">
 	<title>Measure Truck Material</title>
 	<link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="css/style.css">
+  	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="theme-color" content="white"/>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Hello World">
-  <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
-  <meta name="msapplication-TileColor" content="#FFFFFF">
+  	<meta name="apple-mobile-web-app-capable" content="yes">
+  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  	<meta name="apple-mobile-web-app-title" content="Hello World">
+  	<meta name="msapplication-TileImage" content="images/hello-icon-144.png">
+  	<meta name="msapplication-TileColor" content="#FFFFFF">
 </head>
 <body class="fullscreen" style="background-color:#4A148C;">
 	<div class="container">
-<center><h4 style="color: white"> Want to Calculate Measurement of Sand or Stone Material Available in the Truck?</h4></center>
+	<center><h4 style="color: white"> Want to Calculate Measurement of Sand or Stone Material Available in the Truck?</h4></center>
 
-<center><h4 style="color: white">Length : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" name="qty"/>
-<h4 style="color: white">Width : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" name="qty"/>
-<h4 style="color: white">Height : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" name="qty"/>
-<br><br>
-<button onclick="GFG_Fun('Parameter'); "> Calculate </button></center>
- <p id="GFG_DOWN" style="color: white;text-align: center;"></p>
-		</div>
-<script> 
+	<center><h4 style="color: white">Length : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" id="length"/>
+	<h4 style="color: white">Width : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" id="width"/>
+	<h4 style="color: white">Height : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" id="height"/>
+	<br><br>
+
+	<button onclick="add()"> Calculate </button></center>
+	<p id="answer" style="color: white;text-align: center;"></p>
+	<!-- 	<button onclick="GFG_Fun('Parameter'); "> Calculate </button></center> -->
+	<!--  	<p id="GFG_DOWN" style="color: white;text-align: center;"></p> -->
+	</div>
+	
+	<script>
+	function add(){
+	var a,b,c,d;
+	a=Number(document.getElementById("length").value);
+	b=Number(document.getElementById("width").value);
+	c=Number(document.getElementById("height").value);
+	d= a * b * c;
+	document.getElementById("answer").value= d;
+	}
+	</script>
+	
+	<script> 
         var up =  
             document.getElementById('GFG_UP'); 
         var down =  
@@ -37,6 +52,7 @@
             down.innerHTML = "Measurement in Brass : ";
         } 
     </script>
+	
 	<script src="js/main.js"></script>
 </body>
 </html>
