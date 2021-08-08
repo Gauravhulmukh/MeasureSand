@@ -4,41 +4,40 @@
 	<meta charset="utf-8">
 	<title>Measure Truck Material</title>
 	<link rel="manifest" href="manifest.json">
-  	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="theme-color" content="white"/>
-  	<meta name="apple-mobile-web-app-capable" content="yes">
-  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-  	<meta name="apple-mobile-web-app-title" content="Hello World">
-  	<meta name="msapplication-TileImage" content="images/hello-icon-144.png">
-  	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Hello World">
+	<meta name="msapplication-TileImage" content="images/hello-icon-144.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+  	
 </head>
 <body class="fullscreen" style="background-color:#4A148C;">
 	<div class="container">
 	<center><h4 style="color: white"> Want to Calculate Measurement of Sand or Stone Material Available in the Truck?</h4></center>
-
 	<center><h4 style="color: white">Length : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" id="lengthf" placeholder="foot"/>
 		<input type="number" pattern="[0-9]*" inputmode="numeric" id="lengthi" placeholder="inches"/>
-	<h4 style="color: white">Width : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" id="widthf" placeholder="foot"/>
+		<h4 style="color: white">Width : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" id="widthf" placeholder="foot"/>
 		<input type="number" pattern="[0-9]*" inputmode="numeric" id="widthi" placeholder="inches"/>
-	<h4 style="color: white">Height : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" id="heightf" placeholder="foot"/>
+		<h4 style="color: white">Height : </h4><input type="number" pattern="[0-9]*" inputmode="numeric" id="heightf" placeholder="foot"/>
 		<input type="number" pattern="[0-9]*" inputmode="numeric" id="heighti" placeholder="inches"/>
-	<br><br>
-
-	<button onclick="add()"> Calculate </button></center>
 		<br><br>
-		<h4 style="display: inline;color: white;">Measurement in Brass : </h4>
-    <p id="answer" style="display: inline;color: white;"></p>
+		<button onclick="add()"> Calculate Measurement </button></center>
 		<br><br>
-<!-- 	<h4 style="color: white;">Answer: </h4><span id="answer" style="color: white;float: right;"></span>
-        <p id="rate" style="color: white;text-align: center;"></p> -->
-	<!-- 	<button onclick="GFG_Fun('Parameter'); "> Calculate </button></center> -->
-	<!--  	<p id="GFG_DOWN" style="color: white;text-align: center;"></p> -->
+		<p id="t1"style="display: none;color: white;">Measurement in Brass : </p>
+		<input type="number" id="answer" style="display: none;color: black;" placeholder="Measurement" />
+		<p id="t2"style="display: none;color: white;"> X </p>
+		<input type="number" id="rate" pattern="[0-9]*" inputmode="numeric"  placeholder="Rate" style="display:none" />
+		<button onclick="price()" style="display:none" id= "calp" > = </button></center>
+		<p id="pricexx" style="display: inline;color: white;"></p>
+		<br><br>
 	</div>
 	
 	<script>
+	var a,b,c,d,e,f,g,measure,rateval,priceval;
 	function add(){
-	var a,b,c,d,e,f,g;
 	a=Number(document.getElementById("lengthf").value);
 	b=Number(document.getElementById("widthf").value);
 	c=Number(document.getElementById("heightf").value);
@@ -46,26 +45,20 @@
 	e=Number(document.getElementById("widthi").value);
 	f=Number(document.getElementById("heighti").value);
 	g= (((a*12)+ d) * ((b*12) + e) * ((c*12) + f)) / 172800;
-	answer.innerHTML = g.toFixed(3);
-	rate.innerHTML = "Total Cost : " + g.toFixed(3) +" X ";
-// 	document.getElementById("answer").value= d;
+	document.getElementById('t1').style.display = 'inline';
+	document.getElementById('t2').style.display = 'block';
+	document.getElementById('answer').style.display = 'inline';
+	document.getElementById("answer").value = g.toFixed(3);
+	document.getElementById('rate').style.display = 'inline';
+	document.getElementById('calp').style.display = 'inline';
+	}
+	function price(){
+	measure=Number(document.getElementById("answer").value);
+	rateval=Number(document.getElementById("rate").value);
+	priceval = ( measure * rateval );
+	pricexx.innerHTML = priceval.toFixed(2);
 	}
 	</script>
-	
-	<script> 
-        var up =  
-            document.getElementById('GFG_UP'); 
-        var down =  
-            document.getElementById('GFG_DOWN'); 
-        up.innerHTML =  
-          'Click on button to pass the '+ 
-          'string parameter to the function'; 
-  
-        function GFG_Fun(parameter) { 
-            down.innerHTML = "Measurement in Brass : ";
-        } 
-    </script>
-	
 	<script src="js/main.js"></script>
 </body>
 </html>
